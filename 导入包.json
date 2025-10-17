@@ -1,0 +1,85 @@
+{
+  "name": "游戏状态面板",
+  "version": "1.0.0",
+  "description": "支持主角、女主、NPC、作品、艺人的动态状态面板，可折叠，自动适配",
+  "author": "辛格",
+  "github": "https://github.com/xinge0721/ST",
+  "type": "regex-replace",
+  "regex": {
+    "pattern": "(?:<主角>[\\s\\S]*?</主角>\\s*)?(?:<女主>[\\s\\S]*?</女主>\\s*)?(?:<NPC>[\\s\\S]*?</NPC>\\s*)?(?:<作品区>[\\s\\S]*?</作品区>\\s*)?(?:<旗下艺人区>[\\s\\S]*?</旗下艺人区>\\s*)?",
+    "replacement": "<iframe src=\"https://cdn.jsdelivr.net/gh/xinge0721/ST@main/游戏状态卡片/index.html\" style=\"width:100%;max-width:600px;min-height:150px;height:auto;border:none;margin:5px auto;display:block;\" frameborder=\"0\"></iframe>",
+    "flags": "g"
+  },
+  "cdn": {
+    "jsdelivr": "https://cdn.jsdelivr.net/gh/xinge0721/ST@main/游戏状态卡片/index.html",
+    "github_pages": "https://xinge0721.github.io/ST/游戏状态卡片/index.html"
+  },
+  "features": [
+    "✅ 动态插入 - 支持 0~∞ 个角色/作品/艺人",
+    "✅ 自动分组 - 主角、女主、NPC、作品、艺人分类显示",
+    "✅ 可折叠面板 - 点击标题栏折叠/展开",
+    "✅ 美观UI - 游戏风格的深色主题",
+    "✅ 响应式 - 自动适配内容高度",
+    "✅ 状态记忆 - 折叠状态自动保存"
+  ],
+  "examples": {
+    "main_character": "<主角>\n<名字>辛格</名字>\n<体力>85/150</体力>\n<金钱>50000</金钱>\n<学识>10级</学识>\n<背包>钥匙、药水、宝石</背包>\n</主角>",
+    "heroine": "<女主>\n<小红>\n<体力>80/100</体力>\n<好感度>450/520</好感度>\n<当前状态>正在讨论新项目</当前状态>\n</小红>\n</女主>",
+    "npc": "<NPC>\n<老板>\n<体力>100/100</体力>\n<好感度>200/520</好感度>\n</老板>\n</NPC>",
+    "work": "<作品区>\n<电影《夏日回忆》>\n<人气>12000</人气>\n<收益>350000</收益>\n</电影《夏日回忆》>\n</作品区>",
+    "artist": "<旗下艺人区>\n<女优小樱>\n<状态>可用</状态>\n<当前活动>拍摄中</当前活动>\n</女优小樱>\n</旗下艺人区>"
+  },
+  "instructions": {
+    "setup": [
+      "1. 在酒馆助手的正则替换中导入此配置",
+      "2. 或手动添加上面的正则表达式和替换内容",
+      "3. 启用此规则",
+      "4. 在对话中使用标签即可"
+    ],
+    "usage": [
+      "在对话中使用 <主角>、<女主>、<NPC>、<作品区>、<旗下艺人区> 等标签",
+      "子标签名可以自由命名（如 <小红>、<老板> 等）",
+      "标签内容会自动被替换为美化后的面板",
+      "点击面板标题栏可折叠/展开"
+    ]
+  },
+  "tags": {
+    "main": {
+      "tag": "主角",
+      "required": false,
+      "children": ["名字", "体力", "金钱", "学识", "背包"],
+      "note": "推荐使用这些子标签，也可自定义"
+    },
+    "heroine": {
+      "tag": "女主",
+      "required": false,
+      "dynamic": true,
+      "note": "子标签名可自由命名，支持多个"
+    },
+    "npc": {
+      "tag": "NPC",
+      "required": false,
+      "dynamic": true,
+      "note": "子标签名可自由命名，支持多个"
+    },
+    "works": {
+      "tag": "作品区",
+      "required": false,
+      "dynamic": true,
+      "note": "子标签名可自由命名，支持多个"
+    },
+    "artists": {
+      "tag": "旗下艺人区",
+      "required": false,
+      "dynamic": true,
+      "note": "子标签名必须以'男优'、'女优'或'演员'开头"
+    }
+  },
+  "links": {
+    "github": "https://github.com/xinge0721/ST",
+    "jsdelivr_cdn": "https://cdn.jsdelivr.net/gh/xinge0721/ST@main/游戏状态卡片/index.html"
+  },
+  "created": "2025-10-17",
+  "updated": "2025-10-17"
+}
+
