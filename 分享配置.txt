@@ -22,7 +22,7 @@ GitHub：https://github.com/xinge0721/ST
 4. 添加新规则，填写以下内容：
 
 【正则表达式 (Find)】
-(?:<主角>[\s\S]*?</主角>\s*)?(?:<女主>[\s\S]*?</女主>\s*)?(?:<NPC>[\s\S]*?</NPC>\s*)?(?:<作品区>[\s\S]*?</作品区>\s*)?(?:<旗下艺人区>[\s\S]*?</旗下艺人区>\s*)?
+(?:<主角>[\s\S]*?</主角>\s*|<女主>[\s\S]*?</女主>\s*|<NPC>[\s\S]*?</NPC>\s*|<作品区>[\s\S]*?</作品区>\s*|<旗下艺人区>[\s\S]*?</旗下艺人区>\s*)+
 
 【替换为 (Replace)】
 <iframe src="https://cdn.jsdelivr.net/gh/xinge0721/ST@main/游戏状态卡片/index.html" style="width:100%;max-width:600px;min-height:150px;height:auto;border:none;margin:5px auto;display:block;" frameborder="0"></iframe>

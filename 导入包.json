@@ -6,7 +6,7 @@
   "github": "https://github.com/xinge0721/ST",
   "type": "regex-replace",
   "regex": {
-    "pattern": "(?:<主角>[\\s\\S]*?</主角>\\s*)?(?:<女主>[\\s\\S]*?</女主>\\s*)?(?:<NPC>[\\s\\S]*?</NPC>\\s*)?(?:<作品区>[\\s\\S]*?</作品区>\\s*)?(?:<旗下艺人区>[\\s\\S]*?</旗下艺人区>\\s*)?",
+    "pattern": "(?:<主角>[\\s\\S]*?</主角>\\s*|<女主>[\\s\\S]*?</女主>\\s*|<NPC>[\\s\\S]*?</NPC>\\s*|<作品区>[\\s\\S]*?</作品区>\\s*|<旗下艺人区>[\\s\\S]*?</旗下艺人区>\\s*)+",
     "replacement": "<iframe src=\"https://cdn.jsdelivr.net/gh/xinge0721/ST@main/游戏状态卡片/index.html\" style=\"width:100%;max-width:600px;min-height:150px;height:auto;border:none;margin:5px auto;display:block;\" frameborder=\"0\"></iframe>",
     "flags": "g"
   },
